@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Project Nexus analytics and project management dashboard"
+    >
+
+    <title>Project Nexus | Dashboard</title>
+
+    <!-- Connect the CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Connect the JavaScript file -->
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Main sidebar">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">N</span>
+            <span>Nexus</span>
+        </a>
+
+        <nav class="sidebar-nav" aria-label="Main navigation">
+            <p class="nav-heading">WORKSPACE</p>
+
+            <a href="#overview" class="nav-link active"
+               aria-current="page">
+                <span class="nav-icon" aria-hidden="true">▦</span>
+                <span>Overview</span>
+            </a>
+
+            <a href="#analytics" class="nav-link">
+                <span class="nav-icon" aria-hidden="true">▥</span>
+                <span>Analytics</span>
+            </a>
+
+            <a href="#projects" class="nav-link">
+                <span class="nav-icon" aria-hidden="true">▤</span>
+                <span>Projects</span>
+            </a>
+
+            <a href="#team" class="nav-link">
+                <span class="nav-icon" aria-hidden="true">♧</span>
+                <span>Team Members</span>
+            </a>
+
+            <a href="#reports" class="nav-link">
+                <span class="nav-icon" aria-hidden="true">▧</span>
+                <span>Reports</span>
+            </a>
+
+            <p class="nav-heading">PREFERENCES</p>
+
+            <a href="#settings" class="nav-link">
+                <span class="nav-icon" aria-hidden="true">⚙</span>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="profile-avatar" aria-hidden="true">AC</div>
+            <div class="profile-info">
+                <strong>Adika Chuks</strong>
+                <span>Administrator</span>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- Main page area -->
+    <div class="app-wrapper">
+
+        <!-- Top header -->
+        <header class="topbar">
+
+            <div class="page-heading">
+                <h1>Dashboard</h1>
+                <p>Welcome back! Here's what's happening today.</p>
+            </div>
+
+            <div class="topbar-actions">
+                <button
+                    type="button"
+                    class="theme-toggle"
+                    id="theme-toggle"
+                    aria-label="Switch to dark theme"
+                    aria-pressed="false">
+                    <span aria-hidden="true">☾</span>
+                    <span>Theme</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    aria-label="Notifications">
+                    <span aria-hidden="true">♧</span>
+                </button>
+
+                <div class="header-avatar" aria-label="Adika Chuks">
+                    AC
+                </div>
+            </div>
+
+        </header>
+
+        <!-- Main dashboard content -->
+        <main class="dashboard-content" id="overview">
+
+            <section class="welcome-section">
+                <div>
+                    <h2>Overview</h2>
+                    <p>Track your business performance at a glance.</p>
+                </div>
+
+                <button type="button" class="primary-button">
+                    + Create Project
+                </button>
+            </section>
+
+            <!-- Metric cards -->
+            <section class="metrics-grid" id="analytics"
+                     aria-label="Business performance metrics">
+
+                <article class="metric-card">
+                    <div class="metric-top">
+                        <h3>Total Revenue</h3>
+                        <span class="metric-icon revenue-icon"
+                              aria-hidden="true">₦</span>
+                    </div>
+
+                    <p class="metric-value">₦4,850,000</p>
+                    <p class="metric-change positive">
+                        ↑ 12.5%
+                        <span>from last month</span>
+                    </p>
+                </article>
+
+                <article class="metric-card">
+                    <div class="metric-top">
+                        <h3>Total Projects</h3>
+                        <span class="metric-icon projects-icon"
+                              aria-hidden="true">▤</span>
+                    </div>
+
+                    <p class="metric-value">128</p>
+                    <p class="metric-change positive">
+                        ↑ 8.2%
+                        <span>from last month</span>
+                    </p>
+                </article>
+
+                <article class="metric-card">
+                    <div class="metric-top">
+                        <h3>Active Users</h3>
+                        <span class="metric-icon users-icon"
+                              aria-hidden="true">♧</span>
+                    </div>
+
+                    <p class="metric-value">2,450</p>
+                    <p class="metric-change positive">
+                        ↑ 15.3%
+                        <span>from last month</span>
+                    </p>
+                </article>
+
+                <article class="metric-card">
+                    <div class="metric-top">
+                        <h3>Pending Tasks</h3>
+                        <span class="metric-icon tasks-icon"
+                              aria-hidden="true">◷</span>
+                    </div>
+
+                    <p class="metric-value">36</p>
+                    <p class="metric-change negative">
+                        ↑ 4.1%
+                        <span>from last month</span>
+                    </p>
+                </article>
+
+            </section>
+
+            <!-- Projects and activity -->
+            <section class="dashboard-grid">
+
+                <article class="panel projects-panel" id="projects">
+                    <div class="panel-header">
+                        <div>
+                            <h2>Recent Projects</h2>
+                            <p>Monitor your latest projects.</p>
+                        </div>
+
+                        <a href="#projects" class="view-all">
+                            View all
+                        </a>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="projects-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Project Name</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Progress</th>
+                                    <th scope="col">Due Date</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Website Redesign</td>
+                                    <td>
+                                        <span class="status-badge completed">
+                                            Completed
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="progress-cell">
+                                            <progress value="100" max="100">
+                                                100%
+                                            </progress>
+                                            <span>100%</span>
+                                        </div>
+                                    </td>
+                                    <td>Oct 15, 2026</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Mobile Application</td>
+                                    <td>
+                                        <span class="status-badge in-progress">
+                                            In Progress
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="progress-cell">
+                                            <progress value="65" max="100">
+                                                65%
+                                            </progress>
+                                            <span>65%</span>
+                                        </div>
+                                    </td>
+                                    <td>Oct 22, 2026</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Marketing Campaign</td>
+                                    <td>
+                                        <span class="status-badge pending">
+                                            Pending
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="progress-cell">
+                                            <progress value="30" max="100">
+                                                30%
+                                            </progress>
+                                            <span>30%</span>
+                                        </div>
+                                    </td>
+                                    <td>Oct 28, 2026</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Customer Portal</td>
+                                    <td>
+                                        <span class="status-badge in-progress">
+                                            In Progress
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="progress-cell">
+                                            <progress value="80" max="100">
+                                                80%
+                                            </progress>
+                                            <span>80%</span>
+                                        </div>
+                                    </td>
+                                    <td>Nov 05, 2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <!-- Activity feed -->
+                <article class="panel activity-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h2>Recent Activity</h2>
+                            <p>Latest team updates.</p>
+                        </div>
+                    </div>
+
+                    <ul class="activity-list">
+
+                        <li class="activity-item">
+                            <span class="activity-dot blue"
+                                  aria-hidden="true"></span>
+                            <div>
+                                <p><strong>Sarah Johnson</strong> created a
+                                    new project.</p>
+                                <time datetime="2026-10-11T09:30">
+                                    30 minutes ago
+                                </time>
+                            </div>
+                        </li>
+
+                        <li class="activity-item">
+                            <span class="activity-dot green"
+                                  aria-hidden="true"></span>
+                            <div>
+                                <p><strong>Michael James</strong> completed
+                                    a task.</p>
+                                <time datetime="2026-10-11T08:45">
+                                    1 hour ago
+                                </time>
+                            </div>
+                        </li>
+
+                        <li class="activity-item">
+                            <span class="activity-dot purple"
+                                  aria-hidden="true"></span>
+                            <div>
+                                <p><strong>Grace Williams</strong> uploaded
+                                    a report.</p>
+                                <time datetime="2026-10-11T08:00">
+                                    2 hours ago
+                                </time>
+                            </div>
+                        </li>
+
+                        <li class="activity-item">
+                            <span class="activity-dot orange"
+                                  aria-hidden="true"></span>
+                            <div>
+                                <p><strong>David Peter</strong> updated
+                                    a project.</p>
+                                <time datetime="2026-10-11T07:30">
+                                    2 hours ago
+                                </time>
+                            </div>
+                        </li>
+
+                    </ul>
+                </article>
+
+            </section>
+
+            <!-- Team section -->
+            <section class="panel team-panel" id="team">
+                <div class="panel-header">
+                    <div>
+                        <h2>Team Members</h2>
+                        <p>People working on your projects.</p>
+                    </div>
+                </div>
+
+                <div class="team-grid">
+
+                    <article class="team-member">
+                        <div class="team-avatar avatar-blue">SJ</div>
+                        <h3>Sarah Johnson</h3>
+                        <p>UI/UX Designer</p>
+                    </article>
+
+                    <article class="team-member">
+                        <div class="team-avatar avatar-green">MJ</div>
+                        <h3>Michael James</h3>
+                        <p>Developer</p>
+                    </article>
+
+                    <article class="team-member">
+                        <div class="team-avatar avatar-purple">GW</div>
+                        <h3>Grace Williams</h3>
+                        <p>Project Manager</p>
+                    </article>
+
+                    <article class="team-member">
+                        <div class="team-avatar avatar-orange">DP</div>
+                        <h3>David Peter</h3>
+                        <p>Marketing Specialist</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>&copy; 2026 Project Nexus. All rights reserved.</p>
+                <nav aria-label="Footer navigation">
+                    <a href="#reports" id="reports">Reports</a>
+                    <a href="#settings" id="settings">Settings</a>
+                </nav>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+</html>
